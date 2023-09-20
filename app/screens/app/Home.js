@@ -12,6 +12,7 @@ import AppScreen from "../../components/AppScreen";
 import { COLORS, FONTS } from "../../constants/theme";
 import HomeBtnOne from "../../components/HomeBtnOne";
 import Dropdown from "../../components/ToggleDropDown";
+import HomeBtnTwo from "../../components/HomeBtnTwo";
 
 const cars = [
   {
@@ -88,10 +89,16 @@ const Home = () => {
 
         <Text style={styles.bigText}>Próximas manutenções</Text>
 
-        <View style={{ flexDirection: "row" }}>
-          <Dropdown />
-          <Dropdown />
+        <View style={styles.rowSecondBtn}>
+          <FlatList
+            data={cars}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => <HomeBtnTwo />}
+          />
         </View>
+        <Text style={styles.bigText}>Manutenções cadastradas</Text>
       </View>
     </AppScreen>
   );
@@ -135,5 +142,10 @@ const styles = StyleSheet.create({
   rowContainer: {
     flexDirection: "row",
     marginVertical: 20,
+  },
+
+  rowSecondBtn: {
+    flexDirection: "row",
+    marginVertical: 13,
   },
 });
