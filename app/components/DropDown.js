@@ -29,10 +29,10 @@ const DropDown = ({
         <View style={styles.firstContainer}>
           <Text style={styles.place}>{placeholder}</Text>
 
-          <Image
-            source={require("../../assets/icons/dropdowns.png")}
-            style={{ width: 13, height: 13 }}
-            resizeMode="contain"
+          <MaterialCommunityIcons
+            name="chevron-down"
+            size={13}
+            color={COLORS.secondary}
           />
         </View>
         {selectedItem?.name ? (

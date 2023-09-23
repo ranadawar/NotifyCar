@@ -4,10 +4,12 @@ import { COLORS, FONTS } from "../constants/theme";
 
 const HomeBtnOne = ({
   image = require("../../assets/icons/car.png"),
+  onPress,
   title,
+  style,
 }) => {
   return (
-    <TouchableOpacity style={styles.mainContainer}>
+    <TouchableOpacity onPress={onPress} style={[styles.mainContainer, style]}>
       <Image source={image} resizeMode="contain" style={styles.image} />
       <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>

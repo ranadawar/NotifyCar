@@ -34,7 +34,7 @@ const vehicles = [
   },
 ];
 
-const Setting = ({ navigation }) => {
+const AddMaintain = ({ navigation }) => {
   return (
     <AppScreen>
       <View style={styles.menuContainer}>
@@ -77,7 +77,7 @@ const Setting = ({ navigation }) => {
   );
 };
 
-export default Setting;
+export default AddMaintain;
 
 const styles = StyleSheet.create({
   addVehicleBtn: {

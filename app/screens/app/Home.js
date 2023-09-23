@@ -5,6 +5,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import React from "react";
@@ -39,7 +40,7 @@ const cars = [
   },
 ];
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [name, setName] = React.useState("Dawar");
 
   const onPressSmallText = () => {
@@ -49,13 +50,13 @@ const Home = () => {
   return (
     <AppScreen>
       <View style={styles.mainContainer}>
-        <View style={styles.menuContainer}>
+        <TouchableOpacity style={styles.menuContainer}>
           <Image
             resizeMode="contain"
             style={styles.image}
             source={require("../../../assets/icons/menu.png")}
           />
-        </View>
+        </TouchableOpacity>
 
         <Text numberOfLines={2} style={styles.name}>
           Olá {name}
@@ -83,6 +84,7 @@ const Home = () => {
             <HomeBtnOne
               title="Adicionar veículo"
               image={require("../../../assets/icons/plus.png")}
+              onPress={() => navigation.navigate("addVehicle")}
             />
           </ScrollView>
         </View>
@@ -90,13 +92,20 @@ const Home = () => {
         <Text style={styles.bigText}>Próximas manutenções</Text>
 
         <View style={styles.rowSecondBtn}>
-          <FlatList
-            data={cars}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => <HomeBtnTwo />}
-          />
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <FlatList
+              data={cars}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              keyExtractor={(item) => item.id.toString()}
+              renderItem={({ item }) => <HomeBtnTwo />}
+            />
+            <HomeBtnTwo
+              title="Adicionar veículo"
+              icon={require("../../../assets/icons/plus.png")}
+              onPress={() => navigation.navigate("addMaintenance")}
+            />
+          </ScrollView>
         </View>
         <Text style={styles.bigText}>Manutenções cadastradas</Text>
       </View>

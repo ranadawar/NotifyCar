@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  StyleSheet,
+} from "react-native";
+import { COLORS } from "../constants/theme";
+
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Dropdown = ({
   items = [
@@ -24,7 +33,8 @@ const Dropdown = ({
     "nineteen",
     "twenty",
   ],
-  placeholder = "Place",
+  placeholder = "Placeholder",
+  label = "Label",
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -41,16 +51,26 @@ const Dropdown = ({
   return (
     <View>
       <TouchableOpacity onPress={toggleDropdown}>
+        <Text style={styles.label}>{label}</Text>
         <View
           style={{
-            borderBottomWidth: 1,
-            borderColor: "gray",
-            paddingVertical: 10,
             minWidth: 140,
-            marginHorizontal: 20,
           }}
         >
-          <Text>{selectedItem || placeholder}</Text>
+          <View style={styles.bordering}>
+            <Text
+              numberOfLines={1}
+              adjustsFontSizeToFit
+              style={styles.placeholderColor}
+            >
+              {selectedItem || placeholder}
+            </Text>
+            <MaterialCommunityIcons
+              name="chevron-down"
+              size={13}
+              color={COLORS.secondary}
+            />
+          </View>
         </View>
       </TouchableOpacity>
 
@@ -70,3 +90,30 @@ const Dropdown = ({
 };
 
 export default Dropdown;
+
+const styles = StyleSheet.create({
+  bordering: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: COLORS.secondary,
+    borderRadius: 8,
+    padding: 10,
+  },
+  label: {
+    color: COLORS.secondary,
+    marginBottom: 5,
+  },
+  texto: {
+    color: COLORS.secondary,
+    fontSize: 16,
+    paddingVertical: 10,
+    borderWidth: 0.5,
+    borderColor: COLORS.secondary,
+    borderRadius: 8,
+  },
+  placeholderColor: {
+    color: COLORS.secondary,
+  },
+});

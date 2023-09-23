@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { COLORS } from "../constants/theme";
+import { COLORS, FONTS } from "../constants/theme";
 
 const HomeBtnTwo = ({
   newTitle = "26 março",
@@ -11,15 +11,17 @@ const HomeBtnTwo = ({
   icon = require("../../assets/icons/gaso.png"),
 }) => {
   return (
-    <TouchableOpacity style={styles.mainContainer}>
+    <TouchableOpacity onPress={onPress} style={styles.mainContainer}>
       <View style={styles.leftContainer}>
-        <Text>{newTitle}</Text>
-        <Text>{year}</Text>
+        <Text style={styles.leftTitle}>{newTitle}</Text>
+        <Text style={styles.leftSubtitle}>{year}</Text>
       </View>
       <View style={styles.middleContainer} />
       <View style={styles.rightContainer}>
         <Image source={icon} resizeMode="contain" style={styles.icon} />
-        <Text>{rightText}</Text>
+        <Text numberOfLines={1} adjustsFontSizeToFit style={styles.rightText}>
+          {rightText}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -52,5 +54,23 @@ const styles = StyleSheet.create({
   rightContainer: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  leftTitle: {
+    fontFamily: FONTS.medium,
+    color: COLORS.secondary,
+    marginBottom: 2,
+    fontSize: 14,
+  },
+  leftSubtitle: {
+    fontFamily: FONTS.regular,
+    fontSize: 12,
+    color: COLORS.secondary,
+    textAlign: "center",
+  },
+  rightText: {
+    fontFamily: FONTS.medium,
+    fontSize: 14,
+    color: COLORS.secondary,
+    marginTop: 5,
   },
 });

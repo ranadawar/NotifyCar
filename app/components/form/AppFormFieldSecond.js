@@ -6,13 +6,14 @@ import { COLORS } from "../../constants/theme";
 import ErrorMessage from "../ErrorMessage";
 
 import { useFormikContext } from "formik";
+import AppTextInputSecond from "../AppTextInputSecond";
 
-function AppFormField({ name, customState, ...otherProps }) {
+function AppFormFieldSecond({ name, customState, ...otherProps }) {
   const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
 
   return (
     <>
-      <AppTextInput
+      <AppTextInputSecond
         onBlur={() => setFieldTouched(name)}
         onChangeText={(value) => {
           // handleChange(name)
@@ -29,4 +30,4 @@ function AppFormField({ name, customState, ...otherProps }) {
   );
 }
 
-export default AppFormField;
+export default AppFormFieldSecond;

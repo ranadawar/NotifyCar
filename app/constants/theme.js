@@ -5,6 +5,7 @@ export const COLORS = {
   tertiaryGreen: "#CAE7BD",
   lightBg: "#E9F9F6",
   cho: "#757575",
+  form: "#808191",
   white: "#FFF",
   gray: "#E6E6E6",
   balance: "#f7f7ef",

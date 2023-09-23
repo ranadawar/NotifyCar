@@ -2,22 +2,20 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "../../screens/app/Home";
+import Setting from "../../screens/app/Setting";
 import AddVehicle from "../../screens/app/AddVehicle";
-import AddMaintain from "../../screens/app/AddMaintain";
 
 const Stack = createNativeStackNavigator();
 
-const HomeNavigator = () => {
+const SettingNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="hhome" component={Home} />
-      <Stack.Screen name="addVehicle" component={AddVehicle} />
-      <Stack.Screen name="addMaintenance" component={AddMaintain} />
+      <Stack.Screen name="sesetting" component={Setting} />
+      <Stack.Screen name="seAddVehicle" component={AddVehicle} />
     </Stack.Navigator>
   );
 };
 
-export default HomeNavigator;
+export default SettingNavigator;
 
 const styles = StyleSheet.create({});
