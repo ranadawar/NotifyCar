@@ -1,6 +1,6 @@
 import Checkbox from "expo-checkbox";
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, TouchableOpacity, StyleSheet } from "react-native";
 import { COLORS, FONTS } from "../constants/theme";
 
 const CheckboxWithText = ({

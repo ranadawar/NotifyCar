@@ -1,8 +1,9 @@
 export const COLORS = {
   primary: "#C8000A",
   secondary: "#8B95A3",
-  secondaryGreen: "#FF6153",
-  tertiaryGreen: "#CAE7BD",
+  tertary: "#FF1925",
+  themes: "#C8000A",
+  texto: "##808191",
   lightBg: "#E9F9F6",
   cho: "#757575",
   form: "#808191",
@@ -21,9 +22,9 @@ export const COLORS = {
   fino: "#D8D8D9",
   textInputColor: "#F4F6F9",
   yellow: "#f49201",
-  text: "#333333",
+  text: "#808191",
   firstOne: "#EA7474",
-  secondOne: "#CE4FE3",
+
   thirdOne: "#4EE1A4",
   fourthOne: "#DAF7A6",
 };

@@ -1,10 +1,8 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image } from "react-native";
 import React from "react";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../screens/app/Home";
 import Profile from "../screens/app/Profile";
-import Setting from "../screens/app/Setting";
 import Notifications from "../screens/app/Notifications";
 import SettingNavigator from "./app/SettingNavigator";
 import HomeNavigator from "./app/HomeNavigator";
@@ -12,7 +10,9 @@ import HomeNavigator from "./app/HomeNavigator";
 const Tab = createBottomTabNavigator();
 const AppNavigator = () => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
+    >
       <Tab.Screen
         name="home"
         component={HomeNavigator}
@@ -62,7 +62,7 @@ const AppNavigator = () => {
               <Image
                 style={{ width: 20, height: 20 }}
                 resizeMode="contain"
-                source={require("../../assets/icons/settingn.png")}
+                source={require("../../assets/icons/setClor.png")}
               />
             ) : (
               <Image
@@ -82,13 +82,13 @@ const AppNavigator = () => {
               <Image
                 style={{ width: 20, height: 20 }}
                 resizeMode="contain"
-                source={require("../../assets/icons/bell.png")}
+                source={require("../../assets/icons/notiColor.png")}
               />
             ) : (
               <Image
                 style={{ width: 20, height: 20 }}
                 resizeMode="contain"
-                source={require("../../assets/icons/homen.png")}
+                source={require("../../assets/icons/bell.png")}
               />
             ),
         }}
@@ -98,5 +98,3 @@ const AppNavigator = () => {
 };
 
 export default AppNavigator;
-
-const styles = StyleSheet.create({});

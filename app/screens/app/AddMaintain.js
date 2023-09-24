@@ -14,38 +14,45 @@ import HomeBtnOne from "../../components/HomeBtnOne";
 const vehicles = [
   {
     id: 1,
-    name: "Carro 1",
+    name: "Troca de óleo",
     travelled: "1200",
+    image: require("../../../assets/icons/toolls.png"),
   },
   {
     id: 2,
-    name: "Carro 2",
+    name: "Freio",
     travelled: "1200",
+    image: require("../../../assets/icons/toolls.png"),
   },
   {
     id: 3,
-    name: "Carro 3",
+    name: "Freio",
     travelled: "1200",
+    image: require("../../../assets/icons/toolls.png"),
   },
   {
     id: 4,
-    name: "Carro 4",
+    name: "Freio",
     travelled: "1200",
+    image: require("../../../assets/icons/toolls.png"),
   },
 ];
 
 const AddMaintain = ({ navigation }) => {
+  const onPressMenu = () => {
+    console.log("mainSche");
+  };
   return (
     <AppScreen>
-      <View style={styles.menuContainer}>
+      <TouchableOpacity onPress={onPressMenu} style={styles.menuContainer}>
         <Image
           resizeMode="contain"
           style={styles.image}
           source={require("../../../assets/icons/menu.png")}
         />
-      </View>
+      </TouchableOpacity>
 
-      <Text style={styles.titlePage}>Meus veículos</Text>
+      <Text style={styles.titlePage}>Manutenções</Text>
 
       <View style={styles.vehicleContainer}>
         <FlatList
@@ -58,7 +65,11 @@ const AddMaintain = ({ navigation }) => {
           }}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
-            <HomeBtnOne style={{ width: 150, height: 150 }} title={item.name} />
+            <HomeBtnOne
+              image={item.image}
+              style={{ width: 150, height: 150 }}
+              title={item.name}
+            />
           )}
         />
       </View>
@@ -71,7 +82,7 @@ const AddMaintain = ({ navigation }) => {
           style={styles.imagee}
           source={require("../../../assets/icons/plus.png")}
         />
-        <Text style={styles.addText}>Adicionar veículo</Text>
+        <Text style={styles.addText}>Cadastrar Manutenção</Text>
       </TouchableOpacity>
     </AppScreen>
   );

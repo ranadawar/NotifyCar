@@ -14,6 +14,17 @@ import { COLORS, FONTS } from "../../constants/theme";
 import HomeBtnOne from "../../components/HomeBtnOne";
 import Dropdown from "../../components/ToggleDropDown";
 import HomeBtnTwo from "../../components/HomeBtnTwo";
+import HorizontalTouchableList from "../../components/HorizontalTouchableComponent";
+
+const itemss = [
+  "Troca de óleo",
+  "Freio",
+  "Pneu",
+  "Suspensão",
+  "Motor",
+  "Lataria",
+  "Luzes",
+];
 
 const cars = [
   {
@@ -47,6 +58,10 @@ const Home = ({ navigation }) => {
     console.log("View all vehicles");
   };
 
+  const onPressItem = (item) => {
+    console.log(item);
+  };
+
   return (
     <AppScreen>
       <View style={styles.mainContainer}>
@@ -77,7 +92,12 @@ const Home = ({ navigation }) => {
             <FlatList
               data={cars}
               keyExtractor={(item) => item.id.toString()}
-              renderItem={({ item }) => <HomeBtnOne title={item.name} />}
+              renderItem={({ item }) => (
+                <HomeBtnOne
+                  onPress={() => navigation.navigate("vehicleDetails")}
+                  title={item.name}
+                />
+              )}
               horizontal
               showsHorizontalScrollIndicator={false}
             />
@@ -98,16 +118,28 @@ const Home = ({ navigation }) => {
               horizontal
               showsHorizontalScrollIndicator={false}
               keyExtractor={(item) => item.id.toString()}
-              renderItem={({ item }) => <HomeBtnTwo />}
+              renderItem={({ item }) => (
+                <HomeBtnTwo
+                  onPress={() =>
+                    navigation.navigate("maintenanceDetailsScreen")
+                  }
+                />
+              )}
             />
             <HomeBtnTwo
               title="Adicionar veículo"
               icon={require("../../../assets/icons/plus.png")}
-              onPress={() => navigation.navigate("addMaintenance")}
+              onPress={() => navigation.navigate("addM")}
             />
           </ScrollView>
         </View>
-        <Text style={styles.bigText}>Manutenções cadastradas</Text>
+        <Text style={[styles.bigText, { marginBottom: 20 }]}>
+          Manutenções cadastradas
+        </Text>
+        <HorizontalTouchableList
+          onPressItem={(item) => onPressItem(item)}
+          items={itemss}
+        />
       </View>
     </AppScreen>
   );
