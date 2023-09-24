@@ -23,6 +23,9 @@ export default function App() {
   if (!fontsLoaded) return null;
   return (
     <NavigationContainer>
+      {/* when user is not logged in */}
+      {/* <AuthNavigator /> */}
+      {/* when user is logged in */}
       <AppNavigator />
     </NavigationContainer>
   );

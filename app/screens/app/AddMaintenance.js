@@ -17,6 +17,7 @@ import AppFormFieldSecond from "../../components/form/AppFormFieldSecond";
 import FormBtn from "../../components/FormBtn";
 import SubmitSmallButton from "../../components/form/SubmitSmallBtn";
 import Quiz from "../../components/Quiz";
+import MenuComponent from "../../components/MenuComponent";
 
 const validationSchema = Yup.object().shape({
   plate: Yup.string().required().label("Placa"),
@@ -53,13 +54,7 @@ const AddMaintenance = ({ navigation }) => {
     <AppScreen>
       <View style={styles.mainContainer}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <TouchableOpacity onPress={onPressMenu} style={styles.menuContainer}>
-            <Image
-              resizeMode="contain"
-              style={styles.image}
-              source={require("../../../assets/icons/menu.png")}
-            />
-          </TouchableOpacity>
+          <MenuComponent />
 
           <Text style={styles.screenTitle}>Cadastrar Manutenção</Text>
 

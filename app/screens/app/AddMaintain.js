@@ -10,6 +10,7 @@ import React from "react";
 import AppScreen from "../../components/AppScreen";
 import { COLORS, FONTS } from "../../constants/theme";
 import HomeBtnOne from "../../components/HomeBtnOne";
+import MenuComponent from "../../components/MenuComponent";
 
 const vehicles = [
   {
@@ -44,13 +45,9 @@ const AddMaintain = ({ navigation }) => {
   };
   return (
     <AppScreen>
-      <TouchableOpacity onPress={onPressMenu} style={styles.menuContainer}>
-        <Image
-          resizeMode="contain"
-          style={styles.image}
-          source={require("../../../assets/icons/menu.png")}
-        />
-      </TouchableOpacity>
+      <View style={{ padding: 20 }}>
+        <MenuComponent />
+      </View>
 
       <Text style={styles.titlePage}>Manutenções</Text>
 
@@ -124,6 +121,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginHorizontal: 20,
     color: COLORS.form,
+    marginBottom: 20,
   },
   vehicleContainer: {
     flex: 1,

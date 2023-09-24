@@ -6,6 +6,7 @@ import Profile from "../screens/app/Profile";
 import Notifications from "../screens/app/Notifications";
 import SettingNavigator from "./app/SettingNavigator";
 import HomeNavigator from "./app/HomeNavigator";
+import AppStackNavigator from "./AppStackNavigator";
 
 const Tab = createBottomTabNavigator();
 const AppNavigator = () => {
@@ -15,7 +16,7 @@ const AppNavigator = () => {
     >
       <Tab.Screen
         name="home"
-        component={HomeNavigator}
+        component={AppStackNavigator}
         options={{
           tabBarIcon: ({ focused, size }) =>
             focused ? (

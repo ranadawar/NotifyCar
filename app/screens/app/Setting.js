@@ -10,6 +10,7 @@ import React from "react";
 import AppScreen from "../../components/AppScreen";
 import { COLORS, FONTS } from "../../constants/theme";
 import HomeBtnOne from "../../components/HomeBtnOne";
+import MenuComponent from "../../components/MenuComponent";
 
 const vehicles = [
   {
@@ -37,13 +38,7 @@ const vehicles = [
 const Setting = ({ navigation }) => {
   return (
     <AppScreen>
-      <View style={styles.menuContainer}>
-        <Image
-          resizeMode="contain"
-          style={styles.image}
-          source={require("../../../assets/icons/menu.png")}
-        />
-      </View>
+      <MenuComponent />
 
       <Text style={styles.titlePage}>Meus veículos</Text>
 

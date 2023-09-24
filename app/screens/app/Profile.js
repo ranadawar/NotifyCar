@@ -63,10 +63,18 @@ const Profile = ({ navigation }) => {
             <AppFormFieldSecond
               placeholder="Nome*"
               name="email"
-              originalPlaceholder="John"
+              originalPlaceholder=""
             />
-            <AppFormFieldSecond placeholder="Sobrenome*" name="surname" />
-            <AppFormFieldSecond placeholder="E-mail*" name="surname" />
+            <AppFormFieldSecond
+              placeholder="Sobrenome*"
+              name="surname"
+              originalPlaceholder=""
+            />
+            <AppFormFieldSecond
+              placeholder="E-mail*"
+              name="surname"
+              originalPlaceholder=""
+            />
 
             <View style={styles.checkBoxes}>
               <CheckboxWithText
@@ -105,6 +113,7 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     flex: 1,
+    marginTop: 35,
   },
   image: {
     width: 27,

@@ -40,14 +40,14 @@ const initialValues = {
   average: null,
 };
 
-const AddVehicle = () => {
+const ToSchedule = () => {
   return (
     <AppScreen>
       <View style={styles.mainContainer}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <MenuComponent />
 
-          <Text style={styles.screenTitle}>Cadastrar Veículo</Text>
+          <Text style={styles.screenTitle}>Agendar</Text>
 
           <View style={styles.formContainer}>
             <AppForm
@@ -55,43 +55,20 @@ const AddVehicle = () => {
               validationSchema={validationSchema}
               onSubmit={(values) => console.log(values)}
             >
+              <View style={{ height: 50 }} />
               <View style={styles.horizontal}>
                 <View style={styles.box}>
-                  <AppFormFieldSecond
-                    name="plate"
-                    placeholder="Placa*"
-                    originalPlaceholder=""
-                  />
+                  <Dropdown label="Veículo" placeholder="Veículo" />
                 </View>
                 <View style={styles.box}>
-                  <Dropdown label="Cor" placeholder="Selecione a cor" />
-                </View>
-              </View>
-              <View style={styles.horizontal}>
-                <View style={styles.box}>
-                  <Dropdown label="Marca" placeholder="Marca" />
-                </View>
-                <View style={styles.box}>
-                  <Dropdown label="Modelo" placeholder="Modelo" />
-                </View>
-              </View>
-              <View style={styles.horizontal}>
-                <View style={styles.box}>
-                  <Dropdown label="Ano" placeholder="Ano" />
-                </View>
-                <View style={styles.box}>
-                  <AppFormFieldSecond
-                    name="km"
-                    placeholder="Km*"
-                    originalPlaceholder=""
-                  />
+                  <Dropdown label="ListBox title" placeholder="Manutenção" />
                 </View>
               </View>
 
               <View>
                 <AppFormFieldSecond
                   name="plate"
-                  placeholder="Média em Km semanal*"
+                  placeholder="Data*"
                   originalPlaceholder=""
                 />
               </View>
@@ -108,7 +85,7 @@ const AddVehicle = () => {
   );
 };
 
-export default AddVehicle;
+export default ToSchedule;
 
 const styles = StyleSheet.create({
   box: {
@@ -122,7 +99,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     marginTop: 10,
-    marginTop: 80,
+    marginTop: 40,
   },
   horizontal: {
     flexDirection: "row",

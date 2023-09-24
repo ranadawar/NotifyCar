@@ -12,6 +12,7 @@ import React from "react";
 import AppScreen from "../../components/AppScreen";
 import { COLORS, FONTS } from "../../constants/theme";
 import CheckboxWithText from "../../components/CheckboxWithText";
+import MenuComponent from "../../components/MenuComponent";
 
 const maintenance = [
   {
@@ -45,20 +46,13 @@ const maintenance = [
 ];
 
 const MaintenanceSchedule = () => {
-  const onPressMenu = () => {
-    console.log("ewfr");
-  };
   return (
     <AppScreen>
       <View style={{ flex: 1 }}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <TouchableOpacity onPress={onPressMenu} style={styles.menuContainer}>
-            <Image
-              resizeMode="contain"
-              style={styles.image}
-              source={require("../../../assets/icons/menu.png")}
-            />
-          </TouchableOpacity>
+          <View style={styles.menuContainer}>
+            <MenuComponent />
+          </View>
 
           <View style={styles.topContainer}>
             <View style={styles.horizontalContainer}>

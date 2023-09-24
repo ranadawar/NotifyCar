@@ -22,7 +22,7 @@ const AppTextInputSecond = ({
   height,
   originalPlaceholder = "Email",
   inputStyle,
-  placeholderTextColor = "#969696",
+  placeholderTextColor = COLORS.form,
   optional = false,
   ...otherProps
 }) => {
