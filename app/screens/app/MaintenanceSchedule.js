@@ -48,11 +48,9 @@ const maintenance = [
 const MaintenanceSchedule = () => {
   return (
     <AppScreen>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, padding: 20 }}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.menuContainer}>
-            <MenuComponent />
-          </View>
+          <MenuComponent />
 
           <View style={styles.topContainer}>
             <View style={styles.horizontalContainer}>
@@ -163,14 +161,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     alignSelf: "flex-end",
   },
-  menuContainer: {
-    padding: 20,
-  },
 
   topContainer: {
     padding: 20,
     paddingTop: -20,
-    paddingHorizontal: 40,
+    paddingHorizontal: 20,
   },
   modelText: {
     fontFamily: FONTS.light,
@@ -206,7 +201,7 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: COLORS.text,
     marginVertical: 15,
-    marginHorizontal: 40,
+    marginHorizontal: 20,
   },
   editText: {
     color: COLORS.white,
@@ -217,7 +212,7 @@ const styles = StyleSheet.create({
 
   firstContainer: {
     padding: 20,
-    paddingHorizontal: 40,
+    paddingHorizontal: 20,
   },
   horizontalBig: {
     flexDirection: "row",
@@ -255,7 +250,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   secondContainer: {
-    padding: 40,
+    padding: 20,
     paddingTop: 20,
   },
   maintenanceDate: {

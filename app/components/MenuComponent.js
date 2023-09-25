@@ -56,31 +56,33 @@ const MenuComponent = () => {
         />
       </TouchableOpacity>
       {showMenu && (
-        <View style={styles.mainContainer}>
-          <Text onPress={onPressProfile} style={styles.menuText}>
-            Perfil
-          </Text>
-          <Text onPress={onPressCada} style={styles.menuText}>
-            cadastrar veículo
-          </Text>
-          <Text onPress={onPressMyVehicles} style={styles.menuText}>
-            Meus veículos
-          </Text>
-          <Text onPress={onPressAddMaintenance} style={styles.menuText}>
-            Cadastrar Manutenções
-          </Text>
-          <Text onPress={onPressAllMaintenance} style={styles.menuText}>
-            Manutenções
-          </Text>
-          <Text onPress={onPressMaintenanceSchedule} style={styles.menuText}>
-            Agenda de Manutenções
-          </Text>
-          <Text onPress={onPressToSchedule} style={styles.menuText}>
-            Agendar
-          </Text>
-          <Text onPress={onPressProfile} style={styles.menuText}>
-            Logout
-          </Text>
+        <View style={styles.menuContainer}>
+          <View style={styles.menuItems}>
+            <Text onPress={onPressProfile} style={styles.menuText}>
+              Perfil
+            </Text>
+            <Text onPress={onPressCada} style={styles.menuText}>
+              cadastrar veículo
+            </Text>
+            <Text onPress={onPressMyVehicles} style={styles.menuText}>
+              Meus veículos
+            </Text>
+            <Text onPress={onPressAddMaintenance} style={styles.menuText}>
+              Cadastrar Manutenções
+            </Text>
+            <Text onPress={onPressAllMaintenance} style={styles.menuText}>
+              Manutenções
+            </Text>
+            <Text onPress={onPressMaintenanceSchedule} style={styles.menuText}>
+              Agenda de Manutenções
+            </Text>
+            <Text onPress={onPressToSchedule} style={styles.menuText}>
+              Agendar
+            </Text>
+            <Text onPress={onPressProfile} style={styles.menuText}>
+              Logout
+            </Text>
+          </View>
         </View>
       )}
     </>
@@ -90,9 +92,19 @@ const MenuComponent = () => {
 export default MenuComponent;
 
 const styles = StyleSheet.create({
-  mainContainer: {
+  menuContainer: {
+    position: "absolute",
+    top: 40,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    zIndex: 10, // Use a higher zIndex to overlay other content
+    // Semi-transparent black background
+  },
+  menuItems: {
     padding: 20,
     backgroundColor: COLORS.bg,
+    borderRadius: 8,
   },
   menuText: {
     marginVertical: 10,

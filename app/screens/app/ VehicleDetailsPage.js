@@ -11,6 +11,7 @@ import {
 import React from "react";
 import AppScreen from "../../components/AppScreen";
 import { COLORS, FONTS } from "../../constants/theme";
+import MenuComponent from "../../components/MenuComponent";
 
 const maintenance = [
   {
@@ -49,15 +50,9 @@ const VehicleDetailsPage = () => {
   };
   return (
     <AppScreen>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, padding: 20 }}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <TouchableOpacity onPress={onPressMenu} style={styles.menuContainer}>
-            <Image
-              resizeMode="contain"
-              style={styles.image}
-              source={require("../../../assets/icons/menu.png")}
-            />
-          </TouchableOpacity>
+          <MenuComponent />
 
           <View style={styles.topContainer}>
             <Text style={styles.modelText}>Modelo</Text>

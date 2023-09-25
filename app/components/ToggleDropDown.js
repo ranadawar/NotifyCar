@@ -99,10 +99,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.secondary,
     borderRadius: 8,
-    padding: 10,
+    padding: 12,
   },
   label: {
     color: COLORS.secondary,
+    marginTop: 5,
     marginBottom: 5,
   },
   texto: {

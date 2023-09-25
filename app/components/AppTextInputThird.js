@@ -1,40 +1,31 @@
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { COLORS } from "../constants/theme";
 
-const AppTextInputSecond = ({
-  placeholder,
+const AppTextInputThird = ({
+  placeholder = "",
   size = 24,
   onPressIcon,
   onChange,
+  label = "Label",
   value,
   isPassword = false,
   showPassword,
   height,
-  originalPlaceholder = "Email",
   inputStyle,
-  placeholderTextColor = COLORS.form,
-  optional = false,
+  placeholderTextColor = "#969696",
   ...otherProps
 }) => {
   return (
-    <View style={[styles.mainContainer]}>
-      <Text style={styles.placeholder}>{placeholder}</Text>
+    <View style={styles.mainContainer}>
+      <Text style={styles.label}>{label}</Text>
       <TextInput
         onChangeText={onChange}
         style={[styles.input, inputStyle]}
-        value={value}
-        placeholder={originalPlaceholder}
+        placeholder={placeholder}
         placeholderTextColor={placeholderTextColor}
+        value={value}
         autoCapitalize="none"
         autoComplete="off"
         {...otherProps}
@@ -43,24 +34,24 @@ const AppTextInputSecond = ({
   );
 };
 
-export default AppTextInputSecond;
+export default AppTextInputThird;
 
 const styles = StyleSheet.create({
   input: {
     flex: 1,
-    padding: 10,
-    color: COLORS.form,
+    paddingVertical: 0, // Remove paddingVertical to ensure text is visible
+    flex: 1,
+  },
+  label: {
+    color: COLORS.text,
   },
   mainContainer: {
+    backgroundColor: COLORS.white,
+    padding: 16,
     borderRadius: 7,
     marginBottom: 12,
     borderColor: COLORS.form,
     borderBottomWidth: 0.5,
-    marginVertical: 10,
-  },
-  placeholder: {
-    marginBottom: 5,
-    marginHorizontal: 14,
-    color: COLORS.form,
+    height: "auto", // Let the height adjust automatically based on content
   },
 });

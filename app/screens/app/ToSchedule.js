@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   horizontal: {
     flexDirection: "row",
     marginVertical: 15,
-    alignItems: "center",
+    alignItems: "flex-start",
   },
   image: {
     width: 30,

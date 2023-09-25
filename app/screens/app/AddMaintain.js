@@ -45,42 +45,42 @@ const AddMaintain = ({ navigation }) => {
   };
   return (
     <AppScreen>
-      <View style={{ padding: 20 }}>
+      <View style={{ flex: 1, padding: 20 }}>
         <MenuComponent />
-      </View>
 
-      <Text style={styles.titlePage}>Manutenções</Text>
+        <Text style={styles.titlePage}>Manutenções</Text>
 
-      <View style={styles.vehicleContainer}>
-        <FlatList
-          data={vehicles}
-          numColumns={2}
-          columnWrapperStyle={{
-            justifyContent: "space-around",
-            marginHorizontal: 20,
-            marginBottom: 20,
-          }}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <HomeBtnOne
-              image={item.image}
-              style={{ width: 150, height: 150 }}
-              title={item.name}
-            />
-          )}
-        />
+        <View style={styles.vehicleContainer}>
+          <FlatList
+            data={vehicles}
+            numColumns={2}
+            columnWrapperStyle={{
+              justifyContent: "space-around",
+              marginHorizontal: 20,
+              marginBottom: 20,
+            }}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <HomeBtnOne
+                image={item.image}
+                style={{ width: 150, height: 150 }}
+                title={item.name}
+              />
+            )}
+          />
+        </View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("seAddVehicle")}
+          style={styles.addVehicleBtn}
+        >
+          <Image
+            resizeMode="contain"
+            style={styles.imagee}
+            source={require("../../../assets/icons/plus.png")}
+          />
+          <Text style={styles.addText}>Cadastrar Manutenção</Text>
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("seAddVehicle")}
-        style={styles.addVehicleBtn}
-      >
-        <Image
-          resizeMode="contain"
-          style={styles.imagee}
-          source={require("../../../assets/icons/plus.png")}
-        />
-        <Text style={styles.addText}>Cadastrar Manutenção</Text>
-      </TouchableOpacity>
     </AppScreen>
   );
 };

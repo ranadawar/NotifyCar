@@ -10,6 +10,7 @@ import FormBtn from "../../components/FormBtn";
 import SubmitSmallButton from "../../components/form/SubmitSmallBtn";
 import { COLORS } from "../../constants/theme";
 import CheckboxWithText from "../../components/CheckboxWithText";
+import AppTextInput from "../../components/AppTextInput";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label("Name"),
@@ -25,6 +26,10 @@ const initialValues = {
 
 const Profile = ({ navigation }) => {
   const [uri, setUri] = React.useState(null);
+
+  const [name, setName] = React.useState("");
+  const [surname, setSurName] = React.useState("");
+  const [email, setEmail] = React.useState("");
 
   const [notificationEnabled, setNotificationEnabled] = React.useState(false);
   const [messagesEnabled, setMessagesEnabled] = React.useState(false);
@@ -59,21 +64,22 @@ const Profile = ({ navigation }) => {
           <AppForm
             validationSchema={validationSchema}
             initialValues={initialValues}
+            onSubmit={(values) => console.log(values)}
           >
-            <AppFormFieldSecond
+            <AppTextInput
               placeholder="Nome*"
-              name="email"
-              originalPlaceholder=""
+              value={name}
+              onChange={(text) => setName(text)}
             />
-            <AppFormFieldSecond
+            <AppTextInput
               placeholder="Sobrenome*"
-              name="surname"
-              originalPlaceholder=""
+              value={surname}
+              onChange={(text) => setSurName(text)}
             />
-            <AppFormFieldSecond
+            <AppTextInput
               placeholder="E-mail*"
-              name="surname"
-              originalPlaceholder=""
+              value={email}
+              onChange={(text) => setEmail(text)}
             />
 
             <View style={styles.checkBoxes}>
@@ -106,6 +112,7 @@ const styles = StyleSheet.create({
   checkBoxes: {
     padding: 20,
   },
+
   formBtnsContainer: {
     flexDirection: "row",
     justifyContent: "space-around",

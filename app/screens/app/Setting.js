@@ -38,36 +38,41 @@ const vehicles = [
 const Setting = ({ navigation }) => {
   return (
     <AppScreen>
-      <MenuComponent />
+      <View style={{ flex: 1, padding: 20 }}>
+        <MenuComponent />
 
-      <Text style={styles.titlePage}>Meus veículos</Text>
+        <Text style={styles.titlePage}>Meus veículos</Text>
 
-      <View style={styles.vehicleContainer}>
-        <FlatList
-          data={vehicles}
-          numColumns={2}
-          columnWrapperStyle={{
-            justifyContent: "space-around",
-            marginHorizontal: 20,
-            marginBottom: 20,
-          }}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <HomeBtnOne style={{ width: 150, height: 150 }} title={item.name} />
-          )}
-        />
+        <View style={styles.vehicleContainer}>
+          <FlatList
+            data={vehicles}
+            numColumns={2}
+            columnWrapperStyle={{
+              justifyContent: "space-around",
+              marginHorizontal: 20,
+              marginBottom: 20,
+            }}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <HomeBtnOne
+                style={{ width: 150, height: 150 }}
+                title={item.name}
+              />
+            )}
+          />
+        </View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("seAddVehicle")}
+          style={styles.addVehicleBtn}
+        >
+          <Image
+            resizeMode="contain"
+            style={styles.imagee}
+            source={require("../../../assets/icons/plus.png")}
+          />
+          <Text style={styles.addText}>Adicionar veículo</Text>
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("seAddVehicle")}
-        style={styles.addVehicleBtn}
-      >
-        <Image
-          resizeMode="contain"
-          style={styles.imagee}
-          source={require("../../../assets/icons/plus.png")}
-        />
-        <Text style={styles.addText}>Adicionar veículo</Text>
-      </TouchableOpacity>
     </AppScreen>
   );
 };
